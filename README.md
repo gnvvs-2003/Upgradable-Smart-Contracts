@@ -40,3 +40,14 @@ The `delegatecall` applies the implemetation logic to the proxy storage layout
 Solidity assigns storage variables to *slots* based on the order of execution not based on names or types
 2. Function selector clashes
 A function selector is the first four bytes of the cryptographic hash of a function's signature. Because this identifier is so short, it is possible for two different functions (e.g., `transfer(address,uint256)` and `destroy(string))` to have the exact same 4-byte selector. This is known as a function selector clash.
+
+The risk arises if an administrative function in the proxy (like changeAdmin(address)) has the same selector as a user-facing function in the implementation. A regular user could inadvertently call the proxy's admin function, potentially leading to a hostile takeover of the contract.
+
+**Common Proxy patterns and their solutions**
+1. Transparent proxy patterns
+2. UUPS (Universal Upgradable Proxy Standard - EIP-1822)
+3. Diamond proxy pattern (EIP-2535)
+This is a highly advanced, modular pattern. Instead of pointing to a single implementation, a Diamond proxy can delegate calls to multiple implementation contracts, known as "facets." A central mapping within the proxy routes each function selector to its corresponding facet. This allows for granular upgrades (updating only one part of a complex system) and helps developers manage contracts that would otherwise exceed the maximum contract size limit.
+
+<img width="1663" height="734" alt="image" src="https://github.com/user-attachments/assets/48363ba9-5692-4028-9477-591906e9a8f1" />
+
