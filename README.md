@@ -51,3 +51,13 @@ This is a highly advanced, modular pattern. Instead of pointing to a single impl
 
 <img width="1663" height="734" alt="image" src="https://github.com/user-attachments/assets/48363ba9-5692-4028-9477-591906e9a8f1" />
 
+Upgradable smart contract exmaple using `delegatecall`
+<img width="1462" height="793" alt="image" src="https://github.com/user-attachments/assets/1e4f664b-772b-400c-bbd5-1119ff249646" />
+
+<img width="1443" height="759" alt="image" src="https://github.com/user-attachments/assets/10ea2ad8-5912-4fb8-b4d4-cbd578345a70" />
+
+
+>In fact, if Contract A didn't have any of it's own declared variables at all, the appropriate storage slots would still be updated
+
+>Now, this is where things get really interesting. What if we changed the variable type of number in Contract A to a bool? If we then call delegateCall on Contract B, we'll see it's set our storage slot to true. The bool type detects our input as true, with 0 being the only acceptable input for false.
+
