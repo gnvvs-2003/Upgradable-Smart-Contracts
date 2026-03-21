@@ -61,3 +61,5 @@ Upgradable smart contract exmaple using `delegatecall`
 
 >Now, this is where things get really interesting. What if we changed the variable type of number in Contract A to a bool? If we then call delegateCall on Contract B, we'll see it's set our storage slot to true. The bool type detects our input as true, with 0 being the only acceptable input for false.
 
+## Upgradable smart contract simplified
+<img width="3051" height="4066" alt="chainlink-u-s-c" src="https://github.com/user-attachments/assets/f4f23509-6ac3-4ad2-b4da-a626e1800b21" />
